@@ -1,2 +1,1 @@
-# TM-Dell
-TM-Dell
+# tamagotchi_page
