@@ -1,0 +1,378 @@
+/* Reset e Estilos Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', cursive, system-ui, sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #ffb6c1;
+    background-image: 
+        linear-gradient(45deg, #ff9bac 25%, transparent 25%), 
+        linear-gradient(-45deg, #ff9bac 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ff9bac 75%),
+        linear-gradient(-45deg, transparent 75%, #ff9bac 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    padding: 20px;
+}
+
+/* Estilos Tamagotchi */
+.tamagotchi-frame {
+    width: 330px;
+    height: 550px;
+    background-color: #ffcce6;
+    border-radius: 50px;
+    padding: 25px;
+    box-shadow: 
+        0 0 0 10px #ff77a9,
+        0 10px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+.admin-frame {
+    width: 400px;
+    height: 650px;
+    background-color: #b6e7ff;
+    box-shadow: 
+        0 0 0 10px #77b8ff,
+        0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.screen {
+    width: 100%;
+    height: 420px;
+    background-color: #d9f0f3;
+    border-radius: 20px;
+    border: 10px solid #a2d6db;
+    overflow: hidden;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.tamagotchi-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    width: 40px;
+    height: 40px;
+    background-color: #ff77a9;
+    border-radius: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.button:active {
+    transform: scale(0.95);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos de Texto Pixel */
+.pixel-title {
+    font-size: 22px;
+    color: #ff77a9;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0 #ffcce6;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px #ff77a9; }
+    to { text-shadow: 0 0 10px #ff77a9, 0 0 15px #ff9bac; }
+}
+
+.pixel-subtitle {
+    font-size: 16px;
+    color: #5a7aaa;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Login Page */
+.login-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.pixel-input {
+    background-color: #ffffff;
+    border: 3px solid #a2d6db;
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%;
+    margin-bottom: 20px;
+    font-size: 14px;
+    text-align: center;
+    outline: none;
+}
+
+.pixel-input:focus {
+    border-color: #77b8ff;
+    box-shadow: 0 0 5px #77b8ff;
+}
+
+.pixel-error {
+    color: #ff4757;
+    font-size: 12px;
+    margin-top: 10px;
+    text-align: center;
+    min-height: 20px;
+}
+
+/* Admin Page */
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.admin-section {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.pixel-select {
+    background-color: #ffffff;
+    border: 3px solid #a2d6db;
+    padding: 8px;
+    border-radius: 10px;
+    width: 90%;
+    margin-bottom: 10px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.pixel-list {
+    list-style-type: none;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+.pixel-list li {
+    padding: 5px;
+    border-bottom: 1px solid #a2d6db;
+    font-size: 12px;
+}
+
+.pixel-message {
+    font-size: 12px;
+    min-height: 20px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.error {
+    color: #ff4757;
+}
+
+.success {
+    color: #2ecc71;
+}
+
+/* Digimon Container */
+.digimon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.03) 0px,
+        rgba(0, 0, 0, 0.03) 1px,
+        rgba(0, 0, 0, 0) 1px,
+        rgba(0, 0, 0, 0) 3px
+    );
+}
+
+.digimon-img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+    z-index: 2;
+}
+
+.particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.evolution-particle {
+    position: absolute;
+    background-color: gold;
+    border-radius: 50%;
+    z-index: 3;
+}
+
+/* Temas de usuários específicos */
+.seraphimon-theme .screen {
+    background-color: #e5f2ff;
+    border-color: #b8d8ff;
+}
+
+.wargreymon-theme .screen {
+    background-color: #fff2e5;
+    border-color: #ffcd94;
+}
+
+.patamon-theme .screen {
+    background-color: #fff9e5;
+    border-color: #ffecb3;
+}
+
+.hongo-theme .screen {
+    background-color: #e5ffe5;
+    border-color: #b3ffb3;
+}
+
+.admin-theme .screen {
+    background-color: #f2e5ff;
+    border-color: #d9b3ff;
+}
+
+/* Animação de scan para a tela (efeito de CRT) */
+.screen::after {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0)
+    );
+    animation: scan 4s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scan {
+    0% { top: -10px; }
+    100% { top: 100%; }
+}
+
+/* Animação de pulsação para os botões */
+.button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    opacity: 0;
+}
+
+.button:active::before {
+    animation: buttonPulse 0.8s ease-out;
+}
+
+@keyframes buttonPulse {
+    0% {
+        width: 0;
+        height: 0;
+        opacity: 0.8;
+    }
+    100% {
+        width: 60px;
+        height: 60px;
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .tamagotchi-frame {
+        width: 300px;
+        height: 500px;
+        padding: 15px;
+    }
+    
+    .admin-frame {
+        width: 320px;
+        height: 550px;
+    }
+    
+    .screen {
+        height: 380px;
+    }
+    
+    .pixel-title {
+        font-size: 18px;
+    }
+    
+    .pixel-subtitle {
+        font-size: 14px;
+    }
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.tamagotchi-frame {
+    animation: float 3s ease-in-out infinite, fadeIn 1s ease-out;
+}
+
+/* Específico para animação de evolução */
+@keyframes evolve {
+    0% { filter: brightness(1) blur(0); }
+    25% { filter: brightness(1.3) blur(2px); }
+    50% { filter: brightness(1.8) blur(4px); }
+    75% { filter: brightness(1.3) blur(2px); }
+    100% { filter: brightness(1) blur(0); }
+}
+
+.evolving {
+    animation: evolve 1s infinite;
+}
